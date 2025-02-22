@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const allowedDomain = "delayzealudik.github.io";
 
-  if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/webAppNew")) {
+  if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/main-delayzea/newMines")) {
 
       document.body.innerHTML = "";
   
