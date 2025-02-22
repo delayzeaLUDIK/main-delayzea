@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игровой портал</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</div>
+<canvas id="canvas"></canvas>
+<svg id="blot" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+    <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="12" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="joint" />
+        </filter>
+    </defs>
+</svg>
+</head>
+<body>
+  <!-- Звездный фон -->
+  <div class="stars" id="stars"></div>
+
+  <div class="language-selection">
+    <div class="language-option" onclick="changeLanguage('en')">
+      <img src="en.png" alt="English">
+    </div>
+    <div class="language-option" onclick="changeLanguage('ru')">
+      <img src="ru.png" alt="Русский">
+    </div>
+    <div class="language-option" onclick="changeLanguage('hi')">
+      <img src="in.png" alt="हिंदी">
+    </div>
+    <div class="language-option" onclick="changeLanguage('br')">
+      <img src="br.png" alt="Português (BR)">
+    </div>
+    <div class="language-option" onclick="changeLanguage('es')">
+      <img src="es.png" alt="Español">
+    </div>
+    <div class="language-option" onclick="changeLanguage('uz')">
+      <img src="uz.png" alt="O'zbek">
+    </div>
+    <div class="language-option" onclick="changeLanguage('az')">
+      <img src="az.png" alt="Azərbaycan">
+    </div>
+    <div class="language-option" onclick="changeLanguage('tr')">
+      <img src="tr.png" alt="Türkçe">
+    </div>
+    <div class="language-option" onclick="changeLanguage('pt')">
+      <img src="pt.png" alt="Português">
+    </div>
+    <div class="language-option" onclick="changeLanguage('ar')">
+      <img src="ar.png" alt="العربية">
+    </div>
+  </div>
+
+
+<div id="Contact" class="tabcontent">
+    <div class="image-container">
+        <h2 class="title" id="game-picker-title">GAME PICKER</h2>
+        <img src="secret.png" alt="Secret Image">
+    </div>
+    <p id="device-output" class="device-info">Device not detected</p>
+    <button onclick="detectDevice()" class="detect-button" id="detect-button">Detect device</button>
+    <button onclick="startGame()" class="start-button" id="start-button">Start</button>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">&times;</button>
+            <h2 style="text-align: center;">Instruction</h2>
+            <div class="carousel">
+                <div class="slides" style="width: 200%; transition: transform 0.5s ease;">
+                    <div class="slide" style="width: 50%; float: left;"><img src="inst1.png" alt="Instruction 1"></div>
+                    <div class="slide" style="width: 50%; float: left;"><img src="inst2.png" alt="Instruction 2"></div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="dots-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="miniModal" class="modal-mini">
+        <div class="modal-content-mini">
+            <button class="close-button-mini" onclick="closeMiniModal()">&times;</button>
+        </div>
+    </div>
+</div>
+
+<div id="Games" class="tabcontent active">
+
+    <div class="row">
+        <div class="game">
+            <img src="1.png" alt="Mines Preview">
+            <div class="game-info">
+                <h3 id="game1-title">Mines</h3>
+                <button id="game1-button" onclick="openGame('mines')">Open</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="5.png" alt="Lucky Jet Preview">
+            <div class="game-info">
+                <h3 id="game2-title">LuckyJet</h3>
+                <button id="game2-button" onclick="openGame('minesSpibe')">Open</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<audio id="aboutAudio" src="gif.mp3"></audio>
+
+</body>
+</html>
