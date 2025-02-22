@@ -52,7 +52,7 @@ async function checkSignal() {
 }
 const allowedDomain = "delayzealudik.github.io";
 
-if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/webAppNew")) {
+if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/main-delayzea/awf")) {
 
     document.body.innerHTML = "";
 
