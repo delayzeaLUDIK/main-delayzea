@@ -99,104 +99,125 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const translations = {
-en: {
-
-    startButton: "Start",
-    game1Title: "Mines",
-    game1Button: "Open",
-    game2Title: "Lucky Jet",
-    game2Button: "Open"
-
-},
-ru: {
-    startButton: "Начать",
-    game1Title: "Mines",
-    game1Button: "Открыть",
-    game2Title: "Lucky Jet",
-    game2Button: "Открыть"
-
-},
-hi: {
-    startButton: "शुरू करें",
-    game1Title: "Mines",
-    game1Button: "खोलें",
-    game2Title: "Lucky Jet",
-    game2Button: "खोलें"
-
-},
-br: {
-    startButton: "Iniciar",
-    game1Title: "Mines",
-    game1Button: "Abrir",
-    game2Title: "Lucky Jet",
-    game2Button: "Abrir"
-
-},
-es: {
-    startButton: "Iniciar",
-    game1Title: "Mines",
-    game1Button: "Abrir",
-    game2Title: "Lucky Jet",
-    game2Button: "Abrir"
-
-},
-uz: {
-    startButton: "Boshlash",
-    game1Title: "Mines",
-    game1Button: "Ochish",
-    game2Title: "Lucky Jet",
-    game2Button: "Ochish"
-},
-az: {
-    startButton: "Başla",
-    game1Title: "Mines",
-    game1Button: "Aç",
-    game2Title: "Lucky Jet",
-    game2Button: "Aç"
-},
-tr: {
-    startButton: "Başlat",
-    game1Title: "Mines",
-    game1Button: "Aç",
-    game2Title: "Lucky Jet",
-    game2Button: "Aç"
-},
-pt: {
-    startButton: "Iniciar",
-    game1Title: "Mines",
-    game1Button: "Abrir",
-    game2Title: "Lucky Jet",
-    game2Button: "Abrir"
-},
-ar: {
-    startButton: "ابدأ",
-    game1Title: "Mines",
-    game1Button: "فتح",
-    game2Title: "Lucky Jet",
-    game2Button: "فتح"
-
-}
+    en: {
+        startButton: "Start",
+        game1Title: "Mines",
+        game1Button: "Open",
+        game2Title: "Lucky Jet",
+        game2Button: "Open",
+        game6Title: "Aviator",
+        game6Button: "open"
+    },
+    ru: {
+        startButton: "Начать",
+        game1Title: "Mines",
+        game1Button: "Открыть",
+        game2Title: "Lucky Jet",
+        game2Button: "Открыть",
+        game6Title: "Авиатор",
+        game6Button: "открыть"
+    },
+    hi: {
+        startButton: "शुरू करें",
+        game1Title: "Mines",
+        game1Button: "खोलें",
+        game2Title: "Lucky Jet",
+        game2Button: "खोलें",
+        game6Title: "एवियेटर",
+        game6Button: "खोलें"
+    },
+    br: {
+        startButton: "Iniciar",
+        game1Title: "Mines",
+        game1Button: "Abrir",
+        game2Title: "Lucky Jet",
+        game2Button: "Abrir",
+        game6Title: "Aviador",
+        game6Button: "abrir"
+    },
+    es: {
+        startButton: "Iniciar",
+        game1Title: "Mines",
+        game1Button: "Abrir",
+        game2Title: "Lucky Jet",
+        game2Button: "Abrir",
+        game6Title: "Aviador",
+        game6Button: "abrir"
+    },
+    uz: {
+        startButton: "Boshlash",
+        game1Title: "Mines",
+        game1Button: "Ochish",
+        game2Title: "Lucky Jet",
+        game2Button: "Ochish",
+        game6Title: "Aviator",
+        game6Button: "ochish"
+    },
+    az: {
+        startButton: "Başla",
+        game1Title: "Mines",
+        game1Button: "Aç",
+        game2Title: "Lucky Jet",
+        game2Button: "Aç",
+        game6Title: "Aviator",
+        game6Button: "aç"
+    },
+    tr: {
+        startButton: "Başlat",
+        game1Title: "Mines",
+        game1Button: "Aç",
+        game2Title: "Lucky Jet",
+        game2Button: "Aç",
+        game6Title: "Aviatör",
+        game6Button: "aç"
+    },
+    pt: {
+        startButton: "Iniciar",
+        game1Title: "Mines",
+        game1Button: "Abrir",
+        game2Title: "Lucky Jet",
+        game2Button: "Abrir",
+        game6Title: "Aviador",
+        game6Button: "abrir"
+    },
+    ar: {
+        startButton: "ابدأ",
+        game1Title: "Mines",
+        game1Button: "فتح",
+        game2Title: "Lucky Jet",
+        game2Button: "فتح",
+        game6Title: "أفييتر",
+        game6Button: "فتح"
+    }
 };
 
 function changeLanguage(lang) {
-console.log("Changing language to: ", lang);
-console.log("Translations for this language: ", translations[lang]);
+    console.log("Changing language to: ", lang);
+    console.log("Translations for this language: ", translations[lang]);
 
-if (translations[lang]) {
-    document.getElementById('game-picker-title').innerText = translations[lang].gamePickerTitle;
-    document.getElementById('detect-button').innerText = translations[lang].detectButton;
-    document.getElementById('start-button').innerText = translations[lang].startButton;
+    if (translations[lang]) {
+        const elementsToChange = [
+            { id: 'game-picker-title', text: translations[lang].gamePickerTitle },
+            { id: 'game1-title', text: translations[lang].game1Title },
+            { id: 'game1-button', text: translations[lang].game1Button },
+            { id: 'game6-title', text: translations[lang].game6Title },
+            { id: 'game6-button', text: translations[lang].game6Button },
+            { id: 'game2-title', text: translations[lang].game2Title },
+            { id: 'game2-button', text: translations[lang].game2Button },
+        ];
 
-    document.getElementById('game1-title').innerText = translations[lang].game1Title;
-    document.getElementById('game1-button').innerText = translations[lang].game1Button;
-
-    document.getElementById('game2-title').innerText = translations[lang].game2Title;
-    document.getElementById('game2-button').innerText = translations[lang].game2Button;
-} else {
-    console.error("Translations not found for language: ", lang);
+        elementsToChange.forEach(({ id, text }) => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.innerText = text;
+            } else {
+                console.error(`Элемент с id "${id}" не найден`);
+            }
+        });
+    } else {
+        console.error("Translations not found for language: ", lang);
+    }
 }
-}
-
 
 
 // Создаем звезды
@@ -536,7 +557,12 @@ var links = {
     minesSpibe: {
         ios: 'Lucky/index.html',
         other: 'Lucky/index.html'
+    },
+    Aviator: {
+        ios: 'avi/index.html',
+        other: 'avi/index.html'
     }
+
 };
         var url = isIOS ? links[game].ios : links[game].other;
         window.location.href = url;
