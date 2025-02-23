@@ -1,6 +1,6 @@
-      const allowedDomain = "delayzeludik.github.io";
+      const allowedDomain = "asfafsafs.com";
 
-  if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/main-delayzea/avi")) {
+  if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("i")) {
 
       document.body.innerHTML = "";
   
