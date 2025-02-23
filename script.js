@@ -114,7 +114,7 @@ const translations = {
         game1Button: "Открыть",
         game2Title: "Lucky Jet",
         game2Button: "Открыть",
-        game6Title: "Авиатор",
+        game6Title: "Aviator",
         game6Button: "открыть"
     },
     hi: {
