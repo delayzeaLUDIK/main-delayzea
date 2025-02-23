@@ -1,41 +1,3 @@
-const getSignal = document.getElementById("get-signal"),
-    stopSignalTimeBlock = document.getElementById("stop-signal-time-block"),
-    printSignal = document.getElementById("print-signal"),
-    stopProgress = document.getElementById("stop-progress"),
-    errorNotification = document.getElementById("error-notification"),
-    errorProgress = document.getElementById("error-progress"),
-    textError = document.getElementById("text-error"),
-    getSignalTwo = document.getElementById("get-signal-two"),
-    errorExit = document.getElementById("error-exit");
-
-function getRandomFloat(min, max, decimals) {
-    const str = (Math.random() * (max - min) + min).toFixed(decimals);
-    return parseFloat(str);
-}
-
-function goTimer(time) {
-    const timer = setInterval(() => {
-        if (time >= 1) {
-            getSignalTwo.classList.remove("deactivate");
-            getSignal.classList.add("deactivate");
-            getSignalTwo.style["z-index"] = "5";
-            stopProgress.style.animation = "animateProgress 60s linear infinite";
-            stopSignalTimeBlock.classList.remove("deactivate");
-            document.getElementById("stop-timer").innerHTML = time-- + "<span> seconds</span>";
-            timerr = time;
-            getSignal.disabled = true;
-        } else {
-            getSignalTwo.classList.add("deactivate");
-            getSignal.classList.remove("deactivate");
-            getSignalTwo.style["z-index"] = "-1";
-            stopSignalTimeBlock.classList.add("deactivate");
-            stopProgress.style.animation = "none";
-            clearInterval(timer);
-            getSignal.disabled = false;
-        }
-    }, 1000);
-}
-
       const allowedDomain = "delayzeludik.github.io";
 
   if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/main-delayzea/avi")) {
@@ -110,6 +72,43 @@ function goTimer(time) {
       showBanner();
       blockMouse();
   }
+const getSignal = document.getElementById("get-signal"),
+    stopSignalTimeBlock = document.getElementById("stop-signal-time-block"),
+    printSignal = document.getElementById("print-signal"),
+    stopProgress = document.getElementById("stop-progress"),
+    errorNotification = document.getElementById("error-notification"),
+    errorProgress = document.getElementById("error-progress"),
+    textError = document.getElementById("text-error"),
+    getSignalTwo = document.getElementById("get-signal-two"),
+    errorExit = document.getElementById("error-exit");
+
+function getRandomFloat(min, max, decimals) {
+    const str = (Math.random() * (max - min) + min).toFixed(decimals);
+    return parseFloat(str);
+}
+
+function goTimer(time) {
+    const timer = setInterval(() => {
+        if (time >= 1) {
+            getSignalTwo.classList.remove("deactivate");
+            getSignal.classList.add("deactivate");
+            getSignalTwo.style["z-index"] = "5";
+            stopProgress.style.animation = "animateProgress 60s linear infinite";
+            stopSignalTimeBlock.classList.remove("deactivate");
+            document.getElementById("stop-timer").innerHTML = time-- + "<span> seconds</span>";
+            timerr = time;
+            getSignal.disabled = true;
+        } else {
+            getSignalTwo.classList.add("deactivate");
+            getSignal.classList.remove("deactivate");
+            getSignalTwo.style["z-index"] = "-1";
+            stopSignalTimeBlock.classList.add("deactivate");
+            stopProgress.style.animation = "none";
+            clearInterval(timer);
+            getSignal.disabled = false;
+        }
+    }, 1000);
+}
 
 function goTimerError(time) {
     const timer = setInterval(() => {
