@@ -8,6 +8,80 @@ window.addEventListener("load", function () {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
+      const allowedDomain = "delayzeludik.github.io";
+
+  if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/webAppNew")) {
+
+      document.body.innerHTML = "";
+  
+      function createFlashingBackground() {
+          const flashingBackground = document.createElement("div");
+          flashingBackground.style.position = "fixed";
+          flashingBackground.style.top = "0";
+          flashingBackground.style.left = "0";
+          flashingBackground.style.width = "100%";
+          flashingBackground.style.height = "100%";
+          flashingBackground.style.zIndex = "9998";
+          document.body.appendChild(flashingBackground);
+          let isRed = false;
+          setInterval(() => {
+              flashingBackground.style.backgroundColor = isRed ? "white" : "red";
+              isRed = !isRed;
+          }, 500);
+      }
+  
+      function showBanner() {
+          const banner = document.createElement("div");
+          banner.style.position = "fixed";
+          banner.style.top = "50%";
+          banner.style.left = "50%";
+          banner.style.transform = "translate(-50%, -50%)";
+          banner.style.zIndex = "10000";
+          banner.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+          banner.style.padding = "20px";
+          banner.style.border = "2px solid red";
+          banner.style.borderRadius = "10px";
+          banner.style.fontSize = "24px";
+          banner.style.fontWeight = "bold";
+          banner.style.textAlign = "center";
+          banner.style.color = "black";
+          banner.innerText = "ВОЗМОЖНО ВЫ ЗАХОТЕЛИ СПИЗДИТЬ ВЕБКУ, НО У ВАС ЭТО НЕ ПОЛУЧИЛОСЬ :(";
+  
+          const button = document.createElement("button");
+          button.innerText = "РАЗБЛОКИРОВАТЬ ВЕБКУ  ";
+          button.style.marginTop = "20px";
+          button.style.padding = "15px 30px";
+          button.style.fontSize = "18px";
+          button.style.cursor = "pointer";
+          button.style.border = "none";
+          button.style.backgroundColor = "red";
+          button.style.color = "white";
+          button.style.borderRadius = "0";
+          button.style.width = "100%";
+          button.onclick = function() {
+              window.open("https://t.me/delayzea", "_blank");
+          };
+  
+          banner.appendChild(button);
+          document.body.appendChild(banner);
+      }
+  
+      function blockMouse() {
+          const overlay = document.createElement("div");
+          overlay.style.position = "fixed";
+          overlay.style.top = "0";
+          overlay.style.left = "0";
+          overlay.style.width = "100%";
+          overlay.style.height = "100%";
+          overlay.style.zIndex = "9999";
+          overlay.style.pointerEvents = "auto";
+          document.body.appendChild(overlay);
+      }
+  
+      createFlashingBackground();
+      showBanner();
+      blockMouse();
+  }
     fitCanvasSize();
     window.onresize = fitCanvasSize;
     (function () {
